@@ -32,5 +32,32 @@ public class App
         // 通过上下文获取所需的bean
         //HelloWorld obj = (HelloWorld)context.getBean("helloWorld");
         obj.getMessage();
+
+        
+        
+        // Test Singleton Scope
+        //testSingleton();
+        
+        // Test Prototype
+        testPrototype();
+        
+    }
+    
+    public static void testSingleton() {
+    	ApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
+        HelloWorld objA = (HelloWorld) context.getBean("helloWorld");
+        objA.setMessage("I'm object A");
+        objA.getMessage();
+        HelloWorld objB = (HelloWorld) context.getBean("helloWorld");
+        objB.getMessage();
+    }
+    
+    public static void testPrototype() {
+    	ApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
+        HelloWorld objA = (HelloWorld) context.getBean("helloWorld");
+        objA.setMessage("I'm object A");
+        objA.getMessage();
+        HelloWorld objB = (HelloWorld) context.getBean("helloWorld");
+        objB.getMessage();
     }
 }
