@@ -48,7 +48,10 @@ public class App
         //testPrototype();
         
         // Test Bean Parent
-        testBeanParent();
+        //testBeanParent();
+    	
+    	// Test DI
+    	testDI();
     }
     
     public static void testSingleton() {
@@ -81,5 +84,11 @@ public class App
     	objB.getMessage1();
     	objB.getMessage2();
     	objB.getMessage3();
+    }
+    
+    public static void testDI() {
+    	ApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
+    	TextEditor te = (TextEditor)context.getBean("textEditor");
+    	te.spellCheck();
     }
 }

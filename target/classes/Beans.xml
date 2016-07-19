@@ -21,5 +21,21 @@
     	<property name="message1" value="Hello India!"/>
    		<property name="message3" value="Namaste India!"/>
    	</bean>
+   	
+   	<!-- 测试依赖注入 -->
+   	<bean id="textEditor" class="com.tdf.qh.TextEditor">
+   		<!-- 测试基于构造函数的依赖注入 -->
+   		<!--constructor-arg ref="spellChecker"/-->
+   		
+   		<!-- 测试基于设置函数的依赖注入 -->
+   		<!--property name="spellChecker" ref="spellChecker"></property-->
+   		
+   		<!-- Definition for textEditor bean using inner bean -->
+   		<property name="spellChecker">
+   			<bean id="spellChecker" class="com.tdf.qh.SpellChecker"></bean>
+   		</property>
+   	</bean>
+   	
+   	<!-- bean id="spellChecker" class="com.tdf.qh.SpellChecker" ></bean -->
 
 </beans>
