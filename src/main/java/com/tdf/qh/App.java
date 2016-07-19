@@ -51,7 +51,10 @@ public class App
         //testBeanParent();
     	
     	// Test DI
-    	testDI();
+    	//testDI();
+    	
+    	// Test DI SET
+    	testSet();
     }
     
     public static void testSingleton() {
@@ -90,5 +93,14 @@ public class App
     	ApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
     	TextEditor te = (TextEditor)context.getBean("textEditor");
     	te.spellCheck();
+    }
+    
+    public static void testSet() {
+    	ApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
+    	JavaCollection jc = (JavaCollection)context.getBean("javaCollection");
+    	jc.getAddressList();
+    	jc.getAddressSet();
+    	jc.getAddressMap();
+    	jc.getAddressProp();
     }
 }
