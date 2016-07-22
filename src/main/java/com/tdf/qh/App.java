@@ -54,7 +54,10 @@ public class App
     	//testDI();
     	
     	// Test DI SET
-    	testSet();
+    	//testSet();
+    	
+    	// Test Annotation of Required
+    	testAnnoRequired();
     }
     
     public static void testSingleton() {
@@ -102,5 +105,12 @@ public class App
     	jc.getAddressSet();
     	jc.getAddressMap();
     	jc.getAddressProp();
+    }
+    
+    public static void testAnnoRequired(){
+    	ApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
+    	Student student = (Student)context.getBean("student");
+    	System.out.println("Name: " + student.getName());
+    	System.out.println("Age: " + student.getAge());
     }
 }
