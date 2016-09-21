@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd" -->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+	<!-- 指定 Spring IOC 容器扫描的包 -->
+	<!-- 通过 resource-pattern 指定扫描的资源 -->
+	<!-- 
+	<context:component-scan 
+		base-package="com.shaman.beans" 
+		resource-pattern="repository/*.class">
+	</context:component-scan>
+	-->
+	
+	<!-- context:exclude-filter 子节点指定排除哪些指定表达式的组件 -->
+	<!-- context:include-filter 子节点指定包含哪些表达式的组件，该子节点需要配合use-default-filters 一起使用 -->
+	<context:component-scan 
+		base-package="com.shaman.beans"
+		use-default-filters="true">
+		<!-- 
+		<context:exclude-filter type="annotation" 
+			expression="org.springframework.stereotype.Repository"/>
+		-->
+		<!-- 
+		<context:include-filter type="annotation" 
+			expression="org.springframework.stereotype.Repository"/>
+		 -->
+	</context:component-scan>
+	
+</beans>
