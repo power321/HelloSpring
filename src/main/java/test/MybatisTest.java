@@ -22,7 +22,6 @@ public class MybatisTest {
 		System.out.println(userMapperImpl.selectUser(user));
 		
 		System.out.println(userMapperImpl.selectUsers());
-		
 		/*
 		User insertUser = new User();
 		insertUser.setUsername("user2");

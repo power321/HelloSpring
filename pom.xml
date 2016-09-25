@@ -73,14 +73,6 @@
     	<version>3.0.1.RELEASE</version>
     </dependency>
     
-    <!-- 提供SQL转义 -->
-    <dependency>
-    	<groupId>org.apache.commons</groupId>
-    	<artifactId>commons-lang3</artifactId>
-    	<version>3.4</version>
-    </dependency>
-    
-    <!-- Quartz 定时任务 -->
     <dependency>
     	<groupId>quartz</groupId>
     	<artifactId>quartz</artifactId>
